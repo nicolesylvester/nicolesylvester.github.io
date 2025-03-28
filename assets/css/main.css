@@ -3761,7 +3761,6 @@ input, select, textarea {
 		}
 
 /* Wrapper */
-
 	#wrapper {
 		width: 64em;
 		max-width: calc(100% - 4em);
@@ -3783,3 +3782,45 @@ input, select, textarea {
 			}
 
 		}
+		.scroll-gallery {
+			display: flex;
+			overflow-x: auto;
+			gap: 1rem;
+			padding: 1rem;
+			scroll-behavior: smooth;
+		  }
+		  
+		  .gallery-item {
+			flex: 0 0 auto;
+			width: 250px;
+			text-align: center;
+		  }
+		  
+		  .gallery-item img {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: 0.5rem;
+		  }
+		  
+		  /* ----- Clamping and Expansion ----- */
+		  .caption {
+			cursor: pointer; 
+			position: relative; 
+			transition: max-height 0.3s ease;
+		  }
+		  
+		  .caption.clamped {
+			display: -webkit-box;
+			-webkit-line-clamp: 3; 
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			max-height: 4.5em;
+		  }
+		  
+		  .caption.expanded {
+			display: block;
+			max-height: none;
+			-webkit-line-clamp: unset;
+			overflow: visible;
+		  }
